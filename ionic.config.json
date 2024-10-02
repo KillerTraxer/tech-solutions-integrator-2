@@ -1,0 +1,7 @@
+{
+  "name": "Tech Solutions Integrator 2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
