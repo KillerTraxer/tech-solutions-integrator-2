@@ -22,13 +22,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
-
-repositories {
-    flatDir{
-        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs', '../capacitor-cordova-android-plugins/src/main/libs']
+        }
     }
 }
+
+// repositories {
+//     flatDir{
+//         dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+//     }
+// }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
