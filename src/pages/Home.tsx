@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { IonContent, IonHeader, IonPage, IonToolbar, IonText, IonImg } from '@ionic/react';
-import LogoDark from "../assets/LOGO_DARK.svg"
-import LogoLight from "../assets/LOGO_LIGHT.svg"
+import { IonContent, IonPage, IonText, IonImg } from '@ionic/react';
+import LogoBackbone from "../assets/logo_backbone.png"
 import Servicio_1 from "../assets/Servicio_1.svg"
 import Servicio_2 from "../assets/Servicio_2.svg"
 import Servicio_3 from "../assets/Servicio_3.svg"
@@ -32,28 +31,30 @@ function Home() {
         return () => prefersDark.removeEventListener('change', listener);
     }, []);
 
-    console.log(theme)
-
     useEffect(() => {
         if (swiperRef.current) {
             swiperRef.current.autoplay.start();
             console.log('correct')
         }
-    }, []);
+    }, [swiperRef.current]);
 
     return (
         <IonPage>
             <IonContent fullscreen>
 
+                <IonImg src={LogoBackbone} alt="Logo" className="flex justify-center items-center mx-auto mt-10 w-52" />
+                <div className='flex justify-center'>
+                    <IonText class='text-4xl font-bold'>BACK BONE</IonText>
+                </div>
+
                 <div className='flex flex-col pl-[30px] pr-[30px] pt-[30px]'>
-                    <IonText class='text-[25px] font-extrabold text-start' color={'tertiary'}>Servicios</IonText>
-                    <IonText class='text-[17px] text-start mt-1 text-[#939DB5]'>Especialidades</IonText>
+                    <IonText class='text-[30px] font-extrabold text-start' color={'tertiary'}>Servicios</IonText>
+                    <IonText class='text-[20px] text-start mt-1 text-[#939DB5] mb-8'>Especialidades</IonText>
                 </div>
 
                 <Swiper
-                    slidesPerView={2.3}
-                    
-                    spaceBetween={30}
+                    slidesPerView={3}
+                    spaceBetween={120}
                     loop={true}
                     autoplay={{
                         delay: 1000,
@@ -67,46 +68,49 @@ function Home() {
                     className='pl-4'
                 >
                     <SwiperSlide style={{ padding: 0, margin: 0, width: "full" }}>
-                        <IonImg src={Servicio_1} alt="Servicio 1" className="service-image" />
+                        <IonImg src={Servicio_1} alt="Servicio 1" className="w-64" />
                     </SwiperSlide>
 
                     <SwiperSlide style={{ padding: 0, margin: 0, width: "full" }}>
-                        <IonImg src={Servicio_2} alt="Servicio 2" className="service-image" />
+                        <IonImg src={Servicio_2} alt="Servicio 2" className="w-64" />
                     </SwiperSlide>
 
                     <SwiperSlide style={{ padding: 0, margin: 0, width: "full" }}>
-                        <IonImg src={Servicio_3} alt="Servicio 3" className="service-image" />
+                        <IonImg src={Servicio_3} alt="Servicio 3" className="w-64" />
                     </SwiperSlide>
 
                     <SwiperSlide style={{ padding: 0, margin: 0, width: "full" }}>
-                        <IonImg src={Servicio_4} alt="Servicio 4" className="service-image" />
+                        <IonImg src={Servicio_4} alt="Servicio 4" className="w-64" />
                     </SwiperSlide>
 
                     <SwiperSlide style={{ padding: 0, margin: 0, width: "full" }}>
-                        <IonImg src={Servicio_1} alt="Servicio 1" className="service-image" />
+                        <IonImg src={Servicio_1} alt="Servicio 1" className="w-64" />
                     </SwiperSlide>
 
                     <SwiperSlide style={{ padding: 0, margin: 0, width: "full" }}>
-                        <IonImg src={Servicio_2} alt="Servicio 2" className="service-image" />
+                        <IonImg src={Servicio_2} alt="Servicio 2" className="w-64" />
                     </SwiperSlide>
 
                     <SwiperSlide style={{ padding: 0, margin: 0, width: "full" }}>
-                        <IonImg src={Servicio_3} alt="Servicio 3" className="service-image" />
+                        <IonImg src={Servicio_3} alt="Servicio 3" className="w-64" />
                     </SwiperSlide>
 
                     <SwiperSlide style={{ padding: 0, margin: 0, width: "full" }}>
-                        <IonImg src={Servicio_4} alt="Servicio 4" className="service-image" />
+                        <IonImg src={Servicio_4} alt="Servicio 4" className="w-64" />
                     </SwiperSlide>
                 </Swiper>
 
-                <div className='flex flex-col mt-3 pl-[30px] pr-[30px]'>
-                    <IonText class='text-[25px] font-extrabold text-start' color={'tertiary'}>Testimonios</IonText>
-                    <IonText class='text-[17px] text-start mt-1 mb-3 text-[#939DB5]'>Clientes satisfechos</IonText>
+                <div className='flex flex-col mt-10 pl-[30px] pr-[30px]'>
+                    <IonText class='text-[30px] font-extrabold text-start' color={'tertiary'}>Testimonios</IonText>
+                    <IonText class='text-[20px] text-start mt-1 mb-3 text-[#939DB5]'>Clientes satisfechos</IonText>
                 </div>
 
-                <IonImg src={Testimony_1} alt="Testimonio 1" className="mb-6 pl-[28px] pr-[28px]" />
-                <IonImg src={Testimony_2} alt="Testimonio 2" className="mb-6 pl-[28px] pr-[28px]" />
-                <IonImg src={Testimony_3} alt="Testimonio 3" className="mb-12 pl-[28px] pr-[28px]" />
+                <div className='flex flex-row justify-center'>
+                    <IonImg src={Testimony_1} alt="Testimonio 1" className="mb-6 pl-[28px] pr-[28px] w-2/5" />
+                    <IonImg src={Testimony_2} alt="Testimonio 2" className="mb-6 pl-[28px] pr-[28px] w-2/5" />
+                </div>
+
+                <IonImg src={Testimony_3} alt="Testimonio 3" className="mb-12 pl-[28px] pr-[28px] w-2/5 mx-auto" />
 
             </IonContent>
         </IonPage>
